@@ -1,0 +1,19 @@
+<!-- app/src/main/res/values/styles.xml -->
+<resources>
+
+    <!-- Custom Button Styles -->
+    <style name="ButtonLionsmane" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:backgroundTint">@null</item>
+    </style>
+
+    <style name="ButtonHerb" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:backgroundTint">@null</item>
+    </style>
+
+    <style name="ButtonMarigold" parent="Widget.Material3.Button">
+        <item name="android:background">@drawable/round_button</item>
+        <item name="android:backgroundTint">@null</item>
+    </style>
+</resources>
