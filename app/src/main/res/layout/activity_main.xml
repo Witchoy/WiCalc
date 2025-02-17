@@ -1,41 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Lavender"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
+    <TextView
+        android:id="@+id/txtTemp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="96dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="0"
+        android:textSize="30sp"
+        android:gravity="end" />
+
+    <TextView
         android:id="@+id/txtDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:autofillHints=""
-        android:inputType="number"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="0"
+        android:textSize="60sp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="match_parent">
 
         <Button
             android:id="@+id/btn0"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="80dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/lionsmane"
             android:text="@string/number_0"
@@ -46,8 +56,8 @@
 
         <Button
             android:id="@+id/btn1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
@@ -59,9 +69,9 @@
 
         <Button
             android:id="@+id/btn2"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/lionsmane"
@@ -72,21 +82,21 @@
 
         <Button
             android:id="@+id/btn3"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/lionsmane"
             android:text="@string/number_3"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/btnRes"
+            app:layout_constraintBottom_toTopOf="@+id/btnSup"
             app:layout_constraintStart_toEndOf="@+id/btn2" />
 
         <Button
             android:id="@+id/btn4"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
@@ -98,9 +108,9 @@
 
         <Button
             android:id="@+id/btn5"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/lionsmane"
@@ -111,9 +121,9 @@
 
         <Button
             android:id="@+id/btn6"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/lionsmane"
@@ -124,8 +134,8 @@
 
         <Button
             android:id="@+id/btn7"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
@@ -137,9 +147,9 @@
 
         <Button
             android:id="@+id/btn8"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/lionsmane"
@@ -150,9 +160,9 @@
 
         <Button
             android:id="@+id/btn9"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/lionsmane"
@@ -163,10 +173,10 @@
 
         <Button
             android:id="@+id/btnDot"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="80dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/herb"
             android:text="@string/operator_decimal"
@@ -176,10 +186,10 @@
 
         <Button
             android:id="@+id/btnSup"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="80dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/herb"
             android:text="@string/backspace_icon"
@@ -189,8 +199,8 @@
 
         <Button
             android:id="@+id/btnSub"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
@@ -202,8 +212,8 @@
 
         <Button
             android:id="@+id/btnAdd"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
@@ -215,8 +225,8 @@
 
         <Button
             android:id="@+id/btnMul"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
@@ -228,9 +238,9 @@
 
         <Button
             android:id="@+id/btnDiv"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/herb"
@@ -241,8 +251,8 @@
 
         <Button
             android:id="@+id/btnPar1"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="21dp"
             android:background="@drawable/round_button"
@@ -254,9 +264,9 @@
 
         <Button
             android:id="@+id/btnPar2"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="24dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/herb"
@@ -266,9 +276,9 @@
             app:layout_constraintStart_toEndOf="@+id/btnPar1" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/btnClear"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
@@ -280,10 +290,10 @@
 
         <Button
             android:id="@+id/btnRes"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="80dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/marigold"
             android:text="@string/operator_equals"
@@ -293,4 +303,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
