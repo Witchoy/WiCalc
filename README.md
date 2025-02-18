@@ -25,8 +25,8 @@ To get started with WiCalc, follow these steps:
 
 ## Screenshots
 
-![Primary screen](img\WiCalcPrimaryScreen.png "Primary screen")
-![Secondary screen](img\WiCalcSecondaryScreen.png "Other clac (for test)")
+<img src="img/WiCalcPrimaryScreen.png" width="150" height="300" />
+<img src="img/WiCalcSecondaryScreen.png" width="150" height="300" />
 
 ## Contributing
 
