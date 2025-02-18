@@ -5,45 +5,34 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/midnight"
+    android:background="@color/Lavender"
     android:orientation="vertical"
     tools:context=".SecondaryActivity">
-
-    <Button
-        android:id="@+id/btnChange"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Change Calc" />
 
     <TextView
         android:id="@+id/txtDisplay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/display_expresssion"
         android:ellipsize="end"
         android:maxLines="1"
         android:singleLine="true"
         android:text="0"
-        android:textSize="60sp"
-        android:paddingLeft="20dp" />
+        android:textSize="60sp" />
 
     <TextView
         android:id="@+id/txtRes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/display_result"
         android:ellipsize="end"
         android:maxLines="1"
         android:singleLine="true"
         android:text="0"
         android:textSize="30sp"
-        android:paddingRight="20dp"
         android:gravity="end" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -101,7 +90,7 @@
             android:backgroundTint="@color/lionsmane"
             android:text="@string/number_3"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/btnRes"
+            app:layout_constraintBottom_toTopOf="@+id/btnSup"
             app:layout_constraintStart_toEndOf="@+id/btn2" />
 
         <Button
@@ -197,16 +186,16 @@
 
         <Button
             android:id="@+id/btnSup"
-            android:layout_width="@dimen/big_button_width"
-            android:layout_height="@dimen/big_button_height"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="24dp"
-            android:background="@drawable/big_round_button"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/round_button"
             android:backgroundTint="@color/herb"
             android:text="@string/backspace_icon"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/btnMul"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnDot" />
 
         <Button
             android:id="@+id/btnSub"
@@ -257,29 +246,55 @@
             android:backgroundTint="@color/herb"
             android:text="@string/operator_divide"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/btn8"
-            app:layout_constraintStart_toEndOf="@+id/btnClear" />
+            app:layout_constraintBottom_toTopOf="@+id/btn9"
+            app:layout_constraintStart_toEndOf="@+id/btnPar2" />
 
         <Button
-            android:id="@+id/btnClear"
+            android:id="@+id/btnPar1"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="21dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/herb"
+            android:text="@string/bracket_left"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn7"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnPar2"
             android:layout_width="@dimen/button_width"
             android:layout_height="@dimen/button_height"
             android:layout_marginStart="8dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/round_button"
             android:backgroundTint="@color/herb"
+            android:text="@string/bracket_right"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn8"
+            app:layout_constraintStart_toEndOf="@+id/btnPar1" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="@color/herb"
             android:text="@string/operator_clear"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/btn7"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintBottom_toTopOf="@+id/btnMul"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
             android:id="@+id/btnRes"
-            android:layout_width="@dimen/big_button_width"
-            android:layout_height="@dimen/big_button_height"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_height"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="80dp"
-            android:background="@drawable/big_round_button"
+            android:background="@drawable/round_button"
             android:backgroundTint="@color/marigold"
             android:text="@string/operator_equals"
             android:textSize="24sp"

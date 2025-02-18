@@ -1,5 +1,6 @@
 package com.wicalc.android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -9,8 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private StringBuilder numbers, temp;
-    private Button btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9, btnAdd, btnSup, btnSub, btnDot, btnMul, btnDiv, btnRes, btnPar1, btnPar2, btnClear;
+    private StringBuilder numbers, result;
+    private Button btn0,btn1,btn2,btn3,btn4,btn5,btn6,btn7,btn8,btn9, btnAdd, btnSup, btnSub, btnDot, btnMul, btnDiv, btnRes, btnPar1, btnPar2, btnClear, btnChange;
 
     private boolean isDecimal;
 
@@ -44,11 +45,17 @@ public class MainActivity extends AppCompatActivity {
         btnDiv.setOnClickListener(v -> addOperation("÷"));
         btnSub.setOnClickListener(v -> addOperation("-"));
 
+        btnChange.setOnClickListener(v -> {
+            // open new activity
+            Intent intent = new Intent(this, SecondaryActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     private void setVariables() {
         numbers = new StringBuilder();
-        temp = new StringBuilder();
+        result = new StringBuilder();
 
         isDecimal = false;
 
@@ -72,11 +79,15 @@ public class MainActivity extends AppCompatActivity {
         btnPar1 = findViewById(R.id.btnPar1);
         btnPar2 = findViewById(R.id.btnPar2);
         btnClear = findViewById(R.id.btnClear);
+        btnChange = findViewById(R.id.btnChange);
 
         ((TextView) findViewById(R.id.txtDisplay)).setText("------");
     }
 
     private void addNumber(int number) {
+        if (numbers.length() == 1 && numbers.charAt(0) == '0') {
+            numbers = new StringBuilder();
+        }
         numbers.append(number);
         updateDisplay();
     }
@@ -101,34 +112,34 @@ public class MainActivity extends AppCompatActivity {
 
     private void clearDisplay() {
         numbers = new StringBuilder();
-        temp = new StringBuilder();
+        result = new StringBuilder();
         isDecimal = false;
         updateDisplay();
     }
 
     private void addOperation(String operation) {
-        if(temp.length() > 0 && numbers.length() > 0) {
+        if(result.length() > 0 && numbers.length() > 0) {
             calculate();
             return;
         }
-        if(temp.length() == 0 && numbers.length() == 0) {
+        if(result.length() == 0 && numbers.length() == 0) {
             return;
         }
         if(numbers.length() == 0) {
             return;
         }
-        temp = new StringBuilder(numbers + operation);
+        result = new StringBuilder(numbers + operation);
         numbers = new StringBuilder();
         updateDisplay();
     }
 
     private void calculate() {
-        if(temp.length() == 0 || numbers.length() == 0) {
+        if(result.length() == 0 || numbers.length() == 0) {
             return;
         }
         // Calculate the result
-        char operation = temp.charAt(temp.length() - 1);
-        double firstPart = Double.parseDouble(temp.substring(0, temp.length() - 1));
+        char operation = result.charAt(result.length() - 1);
+        double firstPart = Double.parseDouble(result.substring(0, result.length() - 1));
         double secondPart = Double.parseDouble(numbers.toString());
         double result = 0;
         switch (operation) {
@@ -146,6 +157,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case '÷':
                 // Divide the numbers
+                if (secondPart == 0) {
+                    clearDisplay();
+                    ((TextView) findViewById(R.id.txtRes)).setText("Error");
+                    return;
+                }
+
                 result = firstPart / secondPart;
                 break;
         }
@@ -156,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
     private void updateDisplay() {
         // Display the numbers in the screen
         ((TextView) findViewById(R.id.txtDisplay)).setText(numbers.toString());
-        ((TextView) findViewById(R.id.txtTemp)).setText(temp.toString());
+        ((TextView) findViewById(R.id.txtRes)).setText(result.toString());
     }
 
     private void sendResult(Double number) {
